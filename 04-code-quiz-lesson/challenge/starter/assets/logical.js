@@ -50,9 +50,11 @@ function checkAnswer(event) {
     if (answer === correctAnswer) {
         score++;
         playSound("correct");
+        displayFeedback("Correct!");
     } else {
         time -= 10;
         playSound("incorrect");
+        displayFeedback("Incorrect!");
     }
 
     questionIndex++;
@@ -65,6 +67,22 @@ function checkAnswer(event) {
     }
 }
 
+function displayFeedback(feedback) {
+    const feedbackElement = document.getElementById("feedback");
+    feedbackElement.textContent = feedback;
+    feedbackElement.classList.remove("hide");
+    if (feedback === "Correct!") {
+        feedbackElement.classList.add("correct");
+    } else {
+        feedbackElement.classList.add("incorrect");
+    }
+    setTimeout(() => {
+        feedbackElement.classList.remove("correct", "incorrect");
+        feedbackElement.classList.add("hide");
+    }, 1000);
+}
+
+
 
 // End the quiz and show the final score
 function endQuiz() {
@@ -72,6 +90,7 @@ function endQuiz() {
     document.getElementById("questions").classList.add("hide");
     document.getElementById("end-screen").classList.remove("hide");
     document.getElementById("final-score").textContent = score;
+
   
     // Save the score to local storage
     const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -87,11 +106,16 @@ function updateTime() {
       endQuiz();
     }
   }
-
-
+// initilising the sound effect 
+  const sfxCorrect = new Audio("04-code-quiz-lesson/challenge/starter/assets/sfx/correct.wav");
+  const sfxIncorrect = new Audio("04-code-quiz-lesson/challenge/starter/assets/sfx/incorrect.wav");
+  
  
      // Play a sound effect
 function playSound(effect) {
-    const audio = new Audio(`assets/sfx/${effect}.wav`);
-    audio.play();
-  }
+    if (effect === "correct") {
+        sfxCorrect.play();
+    } else if (effect === "incorrect") {
+        sfxIncorrect.play();
+    }
+}
