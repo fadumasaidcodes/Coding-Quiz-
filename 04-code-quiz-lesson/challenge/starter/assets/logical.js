@@ -63,3 +63,16 @@ function checkAnswer(event) {
     }
 }
 
+// End the quiz and show the final score
+function endQuiz() {
+    clearInterval(timer);
+    document.getElementById("questions").classList.add("hide");
+    document.getElementById("end-screen").classList.remove("hide");
+    document.getElementById("final-score").textContent = score;
+  
+    // Save the score to local storage
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials: "", score });
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  }
+  
