@@ -35,8 +35,6 @@ Create a code quiz that contains the following requirements:
 
   * When the game ends, it should display their score and give the user the ability to save their initials and their score
   ## Screenshot 
-  <img width="1439" alt="Screenshot 2023-01-24 at 23 03 20" src="https://user-images.githubusercontent.com/102771343/214440616-739f3f1d-2243-4055-873d-eb422319498d.png">
-<img width="1383" alt="Screenshot 2023-01-24 at 23 03 04" src="https://user-images.githubusercontent.com/102771343/214440648-2a0336d7-53e4-434a-af24-85fe390d79fc.png">
 <img width="1383" alt="Screenshot 2023-01-24 at 23 02 56" src="https://user-images.githubusercontent.com/102771343/214440701-36115466-9696-4690-b762-67f174fd3b59.png">
 
 ## Mock-Up
