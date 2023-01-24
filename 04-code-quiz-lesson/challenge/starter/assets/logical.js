@@ -84,3 +84,9 @@ function updateTime() {
       endQuiz();
     }
   }
+
+  // Play a sound effect
+function playSound(effect) {
+    const audio = new Audio(`assets/sfx/${effect}.wav`);
+    audio.play();
+  }
