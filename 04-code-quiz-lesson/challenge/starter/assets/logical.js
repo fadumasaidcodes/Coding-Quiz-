@@ -60,11 +60,12 @@ function checkAnswer(event) {
     questionIndex++;
 
     // Check if the quiz is over
-    if (questionIndex === questions.length) {
-        endQuiz();
-    } else {
-        displayQuestion();
-    }
+        // Check if the quiz is over
+        if (questionIndex >= questions.length-1) {
+            endQuiz();
+        } else {
+            displayQuestion();
+        }
 }
 
 function displayFeedback(feedback) {
@@ -110,7 +111,33 @@ function updateTime() {
   const sfxCorrect = new Audio("04-code-quiz-lesson/challenge/starter/assets/sfx/correct.wav");
   const sfxIncorrect = new Audio("04-code-quiz-lesson/challenge/starter/assets/sfx/incorrect.wav");
   
- 
+  document.getElementById("submit").addEventListener("click", function(){
+    // Get the score and initials
+    const finalScore = document.getElementById("final-score").textContent;
+    const initials = document.getElementById("initials").value;
+
+    // Create an object to store the score and initials
+    const score = {
+      score: finalScore,
+      initials: initials
+    };
+
+    // Get the high scores from local storage
+    let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+    // Add the new score to the high scores array
+    highScores.push(score);
+
+    // Sort the high scores by score in descending order
+    highScores.sort((a, b) => b.score - a.score);
+
+    // Save the high scores to local storage
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+
+    // Redirect to the high scores page
+    window.location.href = "highscores.html";
+});
+
      // Play a sound effect
 function playSound(effect) {
     if (effect === "correct") {
