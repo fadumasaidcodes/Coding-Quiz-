@@ -43,6 +43,6 @@ const questions = [
     }
 ];
 
-function getQuestions() {
+export function getQuestions() {
     return questions;
 }
