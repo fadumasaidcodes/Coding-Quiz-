@@ -1,7 +1,7 @@
 # Coding-Quiz-
 # Module 6 Challenge Web APIs: Code Quiz
 
--[Live website] https://fadumasaidcodes.github.io/Coding-Quiz-/
+-[Livewebsite] https://fadumasaidcodes.github.io/Coding-Quiz-/
 
 
 ## Your Task
