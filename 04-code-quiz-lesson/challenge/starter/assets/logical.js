@@ -22,3 +22,20 @@ function startQuiz() {
   // Display the first question
   displayQuestion();
 }
+
+
+// Display the current question and choices
+function displayQuestion() {
+    const question = questions[questionIndex];
+    document.getElementById("question-title").textContent = question.title;
+  
+    const choices = document.getElementById("choices");
+    choices.innerHTML = "";
+  
+    question.choices.forEach(choice => {
+      const button = document.createElement("button");
+      button.textContent = choice;
+      button.addEventListener("click", checkAnswer);
+      choices.appendChild(button);
+    });
+  }
