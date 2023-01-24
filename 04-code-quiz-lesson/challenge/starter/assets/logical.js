@@ -1,11 +1,13 @@
-// Initialize variables
+import {getQuestions} from './questions.js';
+const questions = getQuestions();
+
 let questionIndex = 0;
 let score = 0;
 let time = 30;
 let timer;
 
-// Get questions from questions.js
-const questions = getQuestions();
+
+
 
 // Start the quiz when the start button is clicked
 document.getElementById("start").addEventListener("click", startQuiz);
