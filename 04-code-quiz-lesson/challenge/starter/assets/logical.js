@@ -75,4 +75,12 @@ function endQuiz() {
     highScores.push({ initials: "", score });
     localStorage.setItem("highScores", JSON.stringify(highScores));
   }
+  // Update the time displayed on the page
+function updateTime() {
+    time--;
+    document.getElementById("time").textContent = time;
   
+    if (time <= 0) {
+      endQuiz();
+    }
+  }
