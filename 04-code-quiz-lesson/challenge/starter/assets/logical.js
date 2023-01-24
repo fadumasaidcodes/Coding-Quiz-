@@ -65,6 +65,7 @@ function checkAnswer(event) {
     }
 }
 
+
 // End the quiz and show the final score
 function endQuiz() {
     clearInterval(timer);
@@ -87,7 +88,9 @@ function updateTime() {
     }
   }
 
-  // Play a sound effect
+
+ 
+     // Play a sound effect
 function playSound(effect) {
     const audio = new Audio(`assets/sfx/${effect}.wav`);
     audio.play();
